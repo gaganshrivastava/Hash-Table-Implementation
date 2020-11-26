@@ -1,0 +1,242 @@
+Gagan Shrivastava, gs562 prp
+---------------------------------------
+Information to Test the Code for Hashing (Option 1)
+---------------------------------------
+>>"HANDOUT 2 ADHERED; NO BUGS TO REPORT"
+
+>>> OPTION- 1 :: HASHING
+
+>java Hashing_0990 file_name ,This command can be used to run the program.
+>java Hashing_0990 ,This will give an error to enter the file name.
+
+
+> TO run the program first complie the using::
+> javac Hashing_0990.java
+> java Hashing_0990.java file_name
+  
+>>The variable name for the integer array(Hashtable) in the code is T.
+  The variable name for the character array(data stroing) in the code is A.
+
+  
+>>First command must be of 14, and value must be a proper integer greater than 0. 
+Like for example below is the sample test case.
+---------------------
+TestCase:1
+  14 G //reject
+  14 0.0 //reject
+  10 mohan //reject
+  14 5 //this will be the first valid insert command
+  10 shrivas // insert
+
+-- first and second line will be rejected because of String value, floating point value respectively.
+The error message will be ""Invalid table size  at row number = "". OR 
+"Hash Table size can not be less than 1, please  provide the valid size in first argument".
+
+-- Third line is rejected beacuse table is not created yet. So Table will only be created for (14 5) which is a valid table  entry.
+  
+--Till the valid command of table creation is executed, data won't be inserted in the table.
+The message shown at the console will be "Table is  not created yet ,So can't insert the data".
+  
+  
+---------------------  
+TestCase:2
+14 11
+10 alex
+14 5 // show error
+10 tom
+13
+
+  
+--Here create commands are entered at two times which is not proper.
+Thus you will get the message "Table is already created, duplicate cmd for table creation" while trying to create the table again.
+	
+TestCase:3
+14 11
+10 alex\
+10 tom\me
+10 gga\to
+13
+
+10 addme
+13
+
+17 add
+13
+  
+ -------------------Output will be 
+T:                                A : alex\/tom\me/gga\to/
+0 :
+1 :
+2 :
+3 :
+4 : 13
+5 :
+6 :
+7 :
+8 :
+9 : 6
+10 : 0 
+
+ 
+--Invalid command like 17, null value  will be rejected.
+error message will be "Invalid operation/command at rowNumber 6 of the file
+Invalid operation/command at rowNumber 9 of the file
+Invalid operation/command at rowNumber 10 of the file" 
+
+
+---------------------------------------------	
+TestCase::4
+ Complete Sample Test results of below data
+14 3
+10 gagan
+10 shrivasava
+10 you
+10 coming
+10 see
+10 papa
+12 aree
+12 my
+12 sonia
+13
+11 how
+11 are
+11 you
+13
+12 gagan
+12 is
+12 my
+11 name
+11 sonia
+13
+
+:: Output ::
+Operation length/ File size = 21
+aree not found
+my not found
+sonia not found
+
+Printing the Structures--------------------------------------
+T:                                A : gagan/shrivasava/you/coming/see/papa/
+0 : 17
+1 : 28
+2 : 32
+3 : 21
+4 : 0
+5 : 6
+
+how not found,So can't be deleted
+are not found,So can't be deleted
+you deleted from slot : 0
+
+Printing the Structures--------------------------------------
+T:                                A : gagan/shrivasava/***/coming/see/papa/
+0 :
+1 : 28
+2 : 32
+3 : 21
+4 : 0
+5 : 6
+
+gagan found at slot : 4
+is not found
+my not found
+name not found,So can't be deleted
+sonia not found,So can't be deleted
+
+Printing the Structures--------------------------------------
+T:                                A : gagan/shrivasava/***/coming/see/papa/
+0 :
+1 : 28
+2 : 32
+3 : 21
+4 : 0
+5 : 6
+
+
+
+-------------------------------------------------------------------------------------------------------------------
+---------------------------------------
+Information to Test the Code for Hashing (Option 2)
+---------------------------------------
+>>"HANDOUT 2 ADHERED; NO BUGS TO REPORT"
+
+>>> OPTION- 2 :: HITS and PageRank implementations
+
+>>1- File name is Hits_0990
+> Commmand to run the code :: java Hits_0990 <iterations> <initialvalue> <filename>
+If the proper cmd is not given then , code will give error :"Please give the proper running cmd"
+
+> second argyument is the initialValue , it can be -2,-1,0,1
+values other than that will give error :"Initialization value must be between -2 and 1".
+
+>first line of the file denotes number of vertices and edges, it must be integer.
+If data is not valid then error will be " Invalid number of vertices and edges".
+
+> If data is not valid in the file then error will be ""Invalid data""
+
+>If any other error occured in the program , default excepion is "File Not found"
+
+::TestCase::
+sample output results for below command.
+> java Hits_0990 15 -1 samplegraph2
+
+>O/P
+Base:    0 : A/H[0]=0.2500000/0.2500000 A/H[1]=0.2500000/0.2500000 A/H[2]=0.2500000/0.2500000 A/H[3]=0.2500000/0.2500000
+Iter:    1 : A/H[0]=0.5000000/0.8164966 A/H[1]=0.5000000/0.4082483 A/H[2]=0.5000000/0.4082483 A/H[3]=0.5000000/0.0000000
+Iter:    2 : A/H[0]=0.3162278/0.9428090 A/H[1]=0.3162278/0.2357023 A/H[2]=0.6324555/0.2357023 A/H[3]=0.6324555/0.0000000
+Iter:    3 : A/H[0]=0.1714986/0.9847319 A/H[1]=0.1714986/0.1230915 A/H[2]=0.6859943/0.1230915 A/H[3]=0.6859943/0.0000000
+Iter:    4 : A/H[0]=0.0877058/0.9961165 A/H[1]=0.0877058/0.0622573 A/H[2]=0.7016464/0.0622573 A/H[3]=0.7016464/0.0000000
+Iter:    5 : A/H[0]=0.0441081/0.9990249 A/H[1]=0.0441081/0.0312195 A/H[2]=0.7057297/0.0312195 A/H[3]=0.7057297/0.0000000
+Iter:    6 : A/H[0]=0.0220863/0.9997559 A/H[1]=0.0220863/0.0156212 A/H[2]=0.7067618/0.0156212 A/H[3]=0.7067618/0.0000000
+Iter:    7 : A/H[0]=0.0110472/0.9999390 A/H[1]=0.0110472/0.0078120 A/H[2]=0.7070205/0.0078120 A/H[3]=0.7070205/0.0000000
+Iter:    8 : A/H[0]=0.0055241/0.9999847 A/H[1]=0.0055241/0.0039062 A/H[2]=0.7070852/0.0039062 A/H[3]=0.7070852/0.0000000
+Iter:    9 : A/H[0]=0.0027621/0.9999962 A/H[1]=0.0027621/0.0019531 A/H[2]=0.7071014/0.0019531 A/H[3]=0.7071014/0.0000000
+Iter:    10 : A/H[0]=0.0013811/0.9999990 A/H[1]=0.0013811/0.0009766 A/H[2]=0.7071054/0.0009766 A/H[3]=0.7071054/0.0000000
+Iter:    11 : A/H[0]=0.0006905/0.9999998 A/H[1]=0.0006905/0.0004883 A/H[2]=0.7071064/0.0004883 A/H[3]=0.7071064/0.0000000
+Iter:    12 : A/H[0]=0.0003453/0.9999999 A/H[1]=0.0003453/0.0002441 A/H[2]=0.7071067/0.0002441 A/H[3]=0.7071067/0.0000000
+Iter:    13 : A/H[0]=0.0001726/1.0000000 A/H[1]=0.0001726/0.0001221 A/H[2]=0.7071068/0.0001221 A/H[3]=0.7071068/0.0000000
+Iter:    14 : A/H[0]=0.0000863/1.0000000 A/H[1]=0.0000863/0.0000610 A/H[2]=0.7071068/0.0000610 A/H[3]=0.7071068/0.0000000
+Iter:    15 : A/H[0]=0.0000432/1.0000000 A/H[1]=0.0000432/0.0000305 A/H[2]=0.7071068/0.0000305 A/H[3]=0.7071068/0.0000000
+
+>>2-  Page Ranking
+
+>>File name is  Pgrk_0990
+> Commmand to run the code :: java Pgrk_0990 <iterations> <initialvalue> <filename>
+If the proper cmd is not given then , code will give error :"Please give the proper running cmd"
+
+> second argyument is the initialValue , it can be -2,-1,0,1
+values other than that will give error :"Initialization value must be between -2 and 1".
+
+>first line of the file denotes number of vertices and edges, it must be integer.
+If data is not valid then error will be " Invalid number of vertices and edges".
+
+> If data is not valid in the file then error will be ""Invalid data""
+
+>If any other error occured in the program , default excepion is "File Not found".
+
+::TestCase::
+sample output results for below command.
+> java Pgrk_0990 15 -1 samplegraph2
+
+>O/P
+
+>> java Pgrk_0990 15 -1 samplegraph2
+Base    : 0 :P[ 0]=0.2500000 :P[ 1]=0.2500000 :P[ 2]=0.2500000 :P[ 3]=0.2500000
+Iter    : 1 :P[ 0]=0.2500000 :P[ 1]=0.2500000 :P[ 2]=0.1437500 :P[ 3]=0.1437500
+Iter    : 2 :P[ 0]=0.2500000 :P[ 1]=0.1596875 :P[ 2]=0.1437500 :P[ 3]=0.1437500
+Iter    : 3 :P[ 0]=0.1732344 :P[ 1]=0.1596875 :P[ 2]=0.1437500 :P[ 3]=0.1437500
+Iter    : 4 :P[ 0]=0.1732344 :P[ 1]=0.1596875 :P[ 2]=0.1111246 :P[ 3]=0.1111246
+Iter    : 5 :P[ 0]=0.1732344 :P[ 1]=0.1319559 :P[ 2]=0.1111246 :P[ 3]=0.1111246
+Iter    : 6 :P[ 0]=0.1496625 :P[ 1]=0.1319559 :P[ 2]=0.1111246 :P[ 3]=0.1111246
+Iter    : 7 :P[ 0]=0.1496625 :P[ 1]=0.1319559 :P[ 2]=0.1011066 :P[ 3]=0.1011066
+Iter    : 8 :P[ 0]=0.1496625 :P[ 1]=0.1234406 :P[ 2]=0.1011066 :P[ 3]=0.1011066
+Iter    : 9 :P[ 0]=0.1424245 :P[ 1]=0.1234406 :P[ 2]=0.1011066 :P[ 3]=0.1011066
+Iter    : 10 :P[ 0]=0.1424245 :P[ 1]=0.1234406 :P[ 2]=0.0980304 :P[ 3]=0.0980304
+Iter    : 11 :P[ 0]=0.1424245 :P[ 1]=0.1208259 :P[ 2]=0.0980304 :P[ 3]=0.0980304
+Iter    : 12 :P[ 0]=0.1402020 :P[ 1]=0.1208259 :P[ 2]=0.0980304 :P[ 3]=0.0980304
+Iter    : 13 :P[ 0]=0.1402020 :P[ 1]=0.1208259 :P[ 2]=0.0970858 :P[ 3]=0.0970858
+Iter    : 14 :P[ 0]=0.1402020 :P[ 1]=0.1200230 :P[ 2]=0.0970858 :P[ 3]=0.0970858
+Iter    : 15 :P[ 0]=0.1395195 :P[ 1]=0.1200230 :P[ 2]=0.0970858 :P[ 3]=0.0970858
+
+
+
